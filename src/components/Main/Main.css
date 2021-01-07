@@ -21,6 +21,7 @@
     margin: 16px;
     max-width: 100%;
     opacity: 0.96;
+    z-index: 101;
 }
 
 @media (max-width: 320px) {
