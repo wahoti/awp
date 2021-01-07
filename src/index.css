@@ -11,3 +11,42 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.primaryColor {
+  color: #ffcc00;
+}
+
+.primaryBorder {
+  border: 1px solid #ffcc00;
+}
+
+.primaryColorBack {
+  background-color: #ffcc00;
+}
+
+.primaryBorderBot {
+  border-bottom: 1px solid #ffcc00;
+}
+
+.greyBack1 {
+  background-color: #282c34;
+}
+
+.greyBack2 {
+  background-color: #596273;
+}
+
+p {
+  color: white;
+}
+
+.spacedRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.white {
+  color: white;
+}
