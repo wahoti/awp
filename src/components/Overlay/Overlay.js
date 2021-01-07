@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react'
+import Victor from 'victor'
 
 import './Overlay.css'
 
@@ -10,12 +11,25 @@ function getMousePos(canvas, evt) {
     }
 }
 
+
+
 const Overlay = () => {
     const canvasRef = useRef(null)
 
+    let thingX = 0
+    let thingY = 0
     let mouseX = 0
     let mouseY = 0
     let cycle = 0
+    let direction = new Victor(0, 0).normalize()
+    let radius = 64
+    let rotation = .2
+    let thingSize = 10
+    let freeze = false
+    let freezeX = 0
+    let freezeY = 0
+    let prevX = 0 // optimize +_+
+    let prevY = 0
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -23,22 +37,28 @@ const Overlay = () => {
 
         const interval = setInterval(() => {
             if (!canvasRef.current) return
-            // console.log('interval coord', mouseX, mouseY)
+            // is this too expensive?
+            // https://stackoverflow.com/questions/4288253/html5-canvas-100-width-height-of-viewport
+            if (canvas.width != window.innerWidth) canvas.width = window.innerWidth
+            if (canvas.height != window.innerHeight) canvas.height = window.innerHeight
 
-            // okay so have coords
+            direction.rotate(rotation).normalize()
 
-            // now make a rotating pixel around the coords
+            prevX = thingX
+            prevY = thingY
 
-            // pixel position = (coord) + (vector for )
-            // need to refresh on the math lmao
-            // look at some steps for axe in dark squares
-
+            if (freeze) {
+                thingX = freezeX + radius * direction.x
+                thingY = freezeY + radius * direction.y
+            } else {
+                thingX = mouseX + radius * direction.x
+                thingY = mouseY + radius * direction.y
+            }
 
             // ctx.clearRect(0, 0, canvas.width, canvas.height)
-            // ctx.fillStyle = '#000000'
-            // ctx.beginPath()
-            // ctx.arc(50, 100, 20, 0, 2*Math.PI)
-            // ctx.fill()
+            ctx.clearRect(prevX, prevY, thingSize, thingSize)
+            ctx.fillStyle = '#ffcc00'
+            ctx.fillRect(thingX, thingY, thingSize, thingSize)
         }, 32)
 
         return () => clearInterval(interval)
@@ -50,8 +70,10 @@ const Overlay = () => {
         mouseX = x
         mouseY = y
     }
+
+    console.log('?', window, document)
     
-    return <canvas className="overlay" ref={canvasRef} onMouseMove={mouseMove} />
+    return <canvas id="canvas" className="overlay" ref={canvasRef} onMouseMove={mouseMove} />
 }
 
 export default Overlay
