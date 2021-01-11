@@ -23,7 +23,7 @@ const Overlay = () => {
     let cycle = 0
     let direction = new Victor(0, 0).normalize()
     let radius = 10
-    let rotation = .1
+    let rotation = .2
     let thingSize = 100
     let prevX = 0 // optimize +_+
     let prevY = 0
@@ -55,13 +55,13 @@ const Overlay = () => {
             thingY = mouseY + radius * direction.y + cycle * direction.y
 
             cycle += 1
-            if (cycle >= 1000000000) cycle = 0
+            if (cycle >= 1000) cycle = 0
 
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             // ctx.clearRect(prevX, prevY, thingSize, thingSize)
             ctx.fillStyle = '#ffcc00'
             ctx.fillRect(thingX - thingSize / 2, thingY - thingSize / 2, thingSize, thingSize)
-        }, 32)
+        }, 64)
 
         return () => clearInterval(interval)
     }, [])

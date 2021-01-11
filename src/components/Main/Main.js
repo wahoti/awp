@@ -6,6 +6,10 @@ import ff from './img/ff.png' // first foundry
 import an from './img/an.png' // appnexus
 import mf from './img/mf.png' // mcafee
 import osu from './img/osu.jpg' // oregon state
+import judo from './img/judo.jpg' // judo osu
+import dub from './img/mcafeedub.jpg' // mcafee complete
+import m_e from './img/m_e.png' // bloom me
+import pipeline from './img/pipeline.png' // pipeline appnexus
 
 // write out the paragraphs and mvp will be done!
 
@@ -31,10 +35,13 @@ import osu from './img/osu.jpg' // oregon state
 const Panel = ({
     date,
     src,
-    text,
+    paragraphs,
     title,
     rounded,
     imgWidth,
+    postImg,
+    postImgWidth,
+    postImgRounded,
 }) => (
     <article className="panel primaryBorder greyBack1">
         <Suspense fallback={<h3 className="white">Loading...</h3>}>
@@ -45,11 +52,28 @@ const Panel = ({
             <p className="text-container">
                 <img
                     src={src}
-                    alt="me"
+                    alt={title}
                     className={rounded ? "rounded header-img" : "header-img"}
                     style={imgWidth ? { width: imgWidth, height: 'auto' } : {}}
                 />
-                {text}
+                {
+                    paragraphs.map((paragraph, i) => (
+                        <>
+                            {paragraph}
+                            <br /> <br />
+                        </>
+                    ))
+                }
+                {
+                    postImg && (
+                        <img
+                            src={postImg}
+                            alt={title + "post"}
+                            className={postImgRounded ? "rounded header-img" : "header-img"}
+                            style={postImgWidth ? { width: postImgWidth, height: 'auto' } : {}}
+                        />
+                    )
+                }
             </p>
         </Suspense>
     </article>
@@ -62,7 +86,10 @@ const Main = () => (
             src={me}
             rounded
             title="me"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            paragraphs={[
+                "Abdulwahed Wahedi is a software developer of 4 years currently employed at First Foundry. He received his Bachelors in computer science at Oregon State University in Corvallis. Professionally he has been working with web development using frameworks such as React, React Native, Nextjs, and Vuejs. He has a background scripting in Python. Abdulwahed is passionate about learning and improving as a software developer.",
+                "Abdulwahed enjoys hot coffee and cold walks. He is happiest on a rainy beach or a sunny slope, but you will usually find him at home in front of a screen."
+            ]}
         />
 
         <Panel
@@ -70,7 +97,13 @@ const Main = () => (
             src={ff}
             imgWidth="125px"
             title="First Foundry"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            paragraphs={[
+                "First Foundry is a software development studio that works with its partners to deliver high quality software products. At First Foundry Abdulwahed has been involved in several product releases doing frontend development both for mobile and web applications.",
+                "He has been working with a variety of frameworks and been involved with multiple teams. He continues to branch out into new technologies and learn industry practices."
+            ]}
+            postImg={m_e}
+            postImgWidth="150px"
+            postImgRounded
         />
 
         <Panel
@@ -79,7 +112,12 @@ const Main = () => (
             imgWidth="125px"
             rounded
             title="OSU"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            paragraphs={[
+                "Oregon State University is a beautiful college in a small town surrounded by forests and parks. Abdulwahed attended for 5 years getting his Bachelors in Computer Science. In his classes he formed a strong background in maths and algorithms.",
+                "While attending he took an additional year to participate in the MECOP engineering program which consisted of two 6 months paid internships at separate companies. In his senior capstone team he created a speech to text api and data-prep script for the neural net. He was also a member of the OSU Judo club."
+            ]}
+            postImg={judo}
+            postImgWidth="320px"
         />
 
         <Panel
@@ -87,7 +125,13 @@ const Main = () => (
             src={an}
             imgWidth="125px"
             title="AppNexus"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            paragraphs={[
+                "AppNexus is a technology company whose cloud-based software platform powers and optimizes the programmatic sale and purchase of digital advertising.",
+                "At AppNexus Abdulwahed worked with in the Yield Management Platform team. His time was split between front end development in React and his term project, an ad auditing system in Python.",
+                "The term project involved web scraping and naive bayes classification. It was setup to be modular so that each piece of the pipeline could be upgraded or reused.",
+            ]}
+            postImg={pipeline}
+            postImgWidth={"250px"}
         />
 
         <Panel
@@ -95,7 +139,13 @@ const Main = () => (
             src={mf}
             imgWidth="95px"
             title="McAfee"
-            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            paragraphs={[
+                "The group I worked with, Malware Operations - Malware Patrol, is involved with research and analysis of new malware to provide relevant protection for customers. Part of that is collecting new and relevant malware samples to analyze.",
+                "I created an internally hosted dashboard, 'Feed Portal', that monitors the collection feeds at Malware Ops. The portal provides feed status and charts for feed value insight.",
+                "Sample mail box is a feed that operates via email. The inbox is constantly polled for messages with attachments or URLs containing malware samples. I setup the sample mailbox feed at Malware Ops which is now pulling thousands of samples a day." 
+            ]}
+            postImg={dub}
+            postImgWidth="200x"
         />
     </div>
 )
