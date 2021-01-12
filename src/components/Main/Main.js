@@ -114,7 +114,7 @@ const Main = () => (
             title="OSU"
             paragraphs={[
                 "Oregon State University is a beautiful college in a small town surrounded by forests and parks. Abdulwahed attended for 5 years getting his Bachelors in Computer Science. In his classes he formed a strong background in maths and algorithms.",
-                "While attending he took an additional year to participate in the MECOP engineering program which consisted of two 6 months paid internships at separate companies. In his senior capstone team he created a speech to text api and data-prep script for the neural net. He was also a member of the OSU Judo club."
+                "While attending he took an additional year to participate in the MECOP engineering program which consisted of two 6 months paid internships at separate companies. In his senior capstone team he created a speech to text API and pre-processing scripts for the neural network. He was also a member of the OSU Judo club."
             ]}
             postImg={judo}
             postImgWidth="320px"
@@ -128,7 +128,7 @@ const Main = () => (
             paragraphs={[
                 "AppNexus is a technology company whose cloud-based software platform powers and optimizes the programmatic sale and purchase of digital advertising.",
                 "At AppNexus Abdulwahed worked with in the Yield Management Platform team. His time was split between front end development in React and his term project, an ad auditing system in Python.",
-                "The term project involved web scraping and naive bayes classification. It was setup to be modular so that each piece of the pipeline could be upgraded or reused.",
+                "The term project involved web scraping and Naive Bayes classification. It was setup to be modular so that each piece of the pipeline could be upgraded or reused. The system is in use today processing tens of thousands of creatives each day.",
             ]}
             postImg={pipeline}
             postImgWidth={"250px"}
@@ -140,9 +140,9 @@ const Main = () => (
             imgWidth="95px"
             title="McAfee"
             paragraphs={[
-                "The group I worked with, Malware Operations - Malware Patrol, is involved with research and analysis of new malware to provide relevant protection for customers. Part of that is collecting new and relevant malware samples to analyze.",
-                "I created an internally hosted dashboard, 'Feed Portal', that monitors the collection feeds at Malware Ops. The portal provides feed status and charts for feed value insight.",
-                "Sample mail box is a feed that operates via email. The inbox is constantly polled for messages with attachments or URLs containing malware samples. I setup the sample mailbox feed at Malware Ops which is now pulling thousands of samples a day." 
+                "The group Abdulwahed worked with, Malware Operations - Malware Patrol, is involved with research and analysis of new malware to provide relevant protection for customers. Part of that is collecting new and relevant malware samples to analyze.",
+                "Abdulwahed created an internally hosted dashboard, 'Feed Portal', that monitors the collection feeds at Malware Ops. The portal provides feed status and charts for feed value insight.",
+                "Sample mail box is a feed that operates via email. The inbox is constantly polled for messages with attachments or URLs containing malware samples. Abdulwahed setup the sample mailbox feed at Malware Ops which is now pulling thousands of samples a day." 
             ]}
             postImg={dub}
             postImgWidth="200x"
