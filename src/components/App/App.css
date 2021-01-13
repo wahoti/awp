@@ -1,55 +1,10 @@
-/* todo - 3 screen size responsiveness */
-/* mobile: flex column, header with hamburger, opens list below header */
-/* med: like mobile but with padding (max widths?) */
-/* pc: sidebar instead of header, no hamburger */
-
-/* question: how to use the same header for this */
-
-/* question what will my side headers be */
-
-/* reusing css / app themes */
+/* reusing css / theme values */
 /* currently have classes setup on index.css */
-/* option 1: use the class names */
+/* option 1: use the class names (limited) */
 /* option 2: use less for mixins */
-/* option 3: hardcoded values */
+/* option 3: react context with inline styles / reusable components */
 /* option 4: mui themes */
-/* option 5: could style components do this? */
-
-/* pros to least effort -> get it done */
-/* cons to least effort -> could be missing out on low effort process upgrades */
-
-/* pros to more effort -> could upgrade process */
-/* cons to more effort -> might not get done, complicating things */
-
-/* answer -> use least effort for now and upgrade later */
-
-/* mvp portfolio */
-
-/* picture + intro */
-
-/* scroll - timeline or hamburger menu? */
-/* since each page would need substantial content and im not ready for that, timeline */
-/* can always expand content later and add a menu */
-
-/* keep it as simple as possible while presenting professionalism and pretty design */
-
-/* mvp design */
-
-/* dark gray header, light gray main content, very slight yellow trim (.5px) */
-/* bright white text */
-/* responsive design, mostly flex column for now, add fancy header stuff later */
-
-/* thinking ahead */
-
-/* hamburger menu for more pages/content */
-/* header to side on max screen */
-/* hamburger on small and med */
-/* padding on med */
-
-/* okay so ftf actionables */
-
-/* picture + intro in a paragraph */
-/* timeline entry */
+/* option 5: could styled components do this? */
 
 .container {
   min-height: 100vh;

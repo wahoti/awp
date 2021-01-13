@@ -11,12 +11,6 @@ import dub from './img/mcafeedub.jpg' // mcafee complete
 import m_e from './img/m_e.png' // bloom me
 import pipeline from './img/pipeline.png' // pipeline appnexus
 
-// write out the paragraphs and mvp will be done!
-
-// then host
-
-// find out about dns rerouting
-
 // phase 2
 
 // expand certain panels into their own page with more detail and pictures
