@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 
 import './Main.css'
-import me from './img/me.jpeg' // me
+import me2 from './img/me2.png' // me2
 import ff from './img/ff.png' // first foundry
 import an from './img/an.png' // appnexus
 import mf from './img/mf.png' // mcafee
@@ -77,12 +77,12 @@ const Main = () => (
     <div className="main-container">
         <Panel
             date="1993~"
-            src={me}
+            src={me2}
             rounded
             title="me"
             paragraphs={[
                 "Abdulwahed Wahedi is a software developer of 4 years currently employed at First Foundry. He received his Bachelors in computer science at Oregon State University in Corvallis. Professionally he has been working with web development using frameworks such as React, React Native, Nextjs, and Vuejs. He has a background scripting in Python. Abdulwahed is passionate about learning and improving as a software developer.",
-                "Abdulwahed enjoys hot coffee and cold walks. He is happiest on a rainy beach or a sunny slope, but you will usually find him at home in front of a screen."
+                "Abdulwahed enjoys hot coffee and cold walks. He is happiest on a rainy beach or a sunny slope. You will usually find him at home in front of a screen."
             ]}
         />
 
