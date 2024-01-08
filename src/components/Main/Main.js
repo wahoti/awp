@@ -85,7 +85,7 @@ const Main = () => (
       paragraphs={[
         "Abdulwahed Wahedi is a software engineer currently employed at Boulder Care. He received his Bachelors in computer science at Oregon State University in Corvallis. Professionally he has been working primarily with web and app development using React and React Native. He also has a background scripting in Python.",
         "Abdulwahed is passionate about creating software that people love to use, and that helps them in their life.",
-        "Abdulwahed enjoys hot coffee, cold walks, and time with is family. He is happiest on a rainy beach, a sunny slope, or on a cozy couch. He finds inspiration in his daughter Lina, to live life with love and positivity.",
+        "Abdulwahed enjoys hot coffee, cold walks, and time with his family. He is happiest on a rainy beach, a sunny slope, or on a cozy couch. He finds inspiration in his daughter Lina, to live life with love and positivity.",
       ]}
       rounded
       postImg={abiLina2}
